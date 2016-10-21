@@ -5,6 +5,232 @@
 	"bingApiKey": "AhuXBu7ipR1gNbBfXhtUAyCZ6rkC5PkWpxs2MnMRZ1ZupxQfivjLCch22ozKSCAn",
 	"translationsPath": "./MapStore2/web/client/translations",
 	"plugins": {
-			"desktop": ["Map", "Home"]
+			"desktop": [
+        {
+    			"name": "Map",
+    			"cfg": {
+    				"toolsOptions": {
+    					"scalebar": {
+    						"leaflet": {
+    							"position": "bottomright"
+    						}
+    					}
+    				},
+            "zoomControl": false
+    			}
+    		},
+        {
+            "name": "DrawerMenu",
+    				"cfg": {
+    					"glyph": "1-stilo",
+    					"buttonStyle": "primary",
+    					"buttonClassName": "square-button",
+    					"singleSection": true
+    				}
+        },
+        {
+           "name": "Identify",
+           "showIn": ["IdentifyBar", "Settings"],
+    			 "cfg": {
+    				 "panelClassName": "modal-dialog info-panel modal-content",
+    				 "headerClassName": "modal-header",
+    				 "bodyClassName": "modal-body info-wrap",
+    				 "asPanel": false,
+    				 "headerGlyph": "",
+             "glyph": "map-marker",
+    				 "className": "square-button",
+             "closeGlyph": "1-close",
+    				 "wrapRevGeocode": false,
+    				 "enableRevGeocode": true,
+    				 "viewerOptions": {
+    					"container": "{context.ReactSwipe}",
+    					"header": "{context.SwipeHeader}",
+    					"headerOptions": {
+    						"useButtons": true
+    					},
+    					"containerProps": {
+    						"continuous": false
+    					},
+    					"collapsible": false
+    				},
+    				"excludeOptions": [
+    						"links",
+    						"allowedSRS",
+    						"title",
+    						"type",
+    						"visibility",
+    						"params",
+    						"legend",
+    						"statistics",
+    						"columnDefs",
+    						"advancedFilter",
+    						"boundingBox",
+    						"capabilities",
+    						"describeCoverage",
+    						"describeLayer",
+    						"loading"
+
+    				]
+    			 }
+        },
+				{
+    				"name": "TOC",
+    				"cfg": {
+    					"visibilityCheckType": "glyph",
+    					"settingsOptions": {
+    						"includeCloseButton": false,
+    						"closeGlyph": "1-close",
+    						"asModal": false,
+    						"buttonSize": "small"
+    					}
+    				},
+    				"override": {
+    					"DrawerMenu": {
+    						"glyph": "1-layer",
+                "buttonConfig": {
+                  "buttonClassName": "square-button no-border"
+                }
+    					}
+    				}
+    		},
+				{
+    				"name": "BackgroundSwitcher",
+    				"cfg": {
+    					"fluid": true,
+    		      "columnProperties": {
+                  "xs": 12,
+                  "sm": 12,
+                  "md": 12
+              }
+    				},
+    				"override": {
+    					"DrawerMenu": {
+    							"glyph": "1-map",
+                  "buttonConfig": {
+                    "buttonClassName": "square-button no-border"
+                  }
+    						}
+    				}
+    		},
+				{
+    				"name": "Measure",
+            "cfg":{
+              "showResults": false,
+              "lineGlyph": "1-measure-lenght",
+              "areaGlyph": "1-measure-area",
+              "bearingGlyph": "1-bearing",
+              "useButtonGroup": false
+            },
+    				"override": {
+    					"DrawerMenu": {
+    						"glyph": "1-stilo",
+                "buttonConfig": {
+                  "buttonClassName": "square-button no-border"
+                }
+    					}
+    				}
+    		},
+				{
+						"name": "MeasureResults",
+		        "cfg":{
+		          "closeGlyph": "1-close",
+		          "withPanelAsContainer": false
+		        }
+				},
+				{
+    				"name": "Settings",
+    				"hideFrom": ["Toolbar", "DrawerMenu"],
+    				"cfg": {
+    					"wrapWithPanel": false,
+    					"closeGlyph": "1-close",
+              "overrideSettings": {
+                "history": false
+              },
+    					"wrap": true
+    				}
+    		},
+         {
+          "name": "Toolbar",
+          "id": "NavigationBar",
+          "stateSelector": "toolbar",
+          "cfg": {
+    				"buttonStyle": "primary",
+            "id": "navigationBar"
+          }
+        },
+				 {
+          "name": "Toolbar",
+          "id": "IdentifyBar",
+    			"stateSelector": "identify",
+          "cfg": {
+    				"buttonStyle": "primary",
+            "pressedButtonStyle": "success",
+            "id": "identifyBar"
+          },
+          "isDefault": false
+        },
+        "ScaleBox",
+        {
+    			  "name": "Locate",
+    				"cfg": {
+    					"glyph": "1-position-1",
+              "btnConfig": {
+                "className": "square-button"
+              }
+    				},
+    				"override": {
+    					"Toolbar": {
+    						"alwaysVisible": true
+    					}
+    				}
+    		},
+        {
+          "name": "ZoomAll",
+          "cfg":{
+            "className": "square-button"
+          }
+        },
+        {
+          "name":"ZoomIn",
+    			"override": {
+    				"Toolbar": {
+    					"alwaysVisible": true
+    				}
+    			}
+        },
+        {
+          "name":"ZoomOut",
+    			"override": {
+    				"Toolbar": {
+    					"alwaysVisible": true
+    				}
+    			}
+        },
+				{
+    			"name": "Expander",
+					"cfg":{
+						"className": "square-button"
+          }
+    		},
+				{
+		      "name": "Undo",
+		      "cfg": {
+		        "glyph": "1-screen-backward",
+		        "buttonStyle": "primary",
+		        "btnConfig": {
+		          "className": "square-button"
+		        }
+		      }
+		    },
+				{
+		      "name": "Redo",
+		      "cfg": {
+		        "glyph": "1-screen-forward",
+		        "buttonStyle": "primary",
+		        "btnConfig": {
+		          "className": "square-button"
+		        }
+		      }
+		    }]
 	}
 }

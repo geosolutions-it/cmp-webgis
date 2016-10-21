@@ -14,7 +14,25 @@ module.exports = {
     }],
     pluginsDef: require('./plugins.js'),
     initialState: {
-        defaultState: {},
+        defaultState: {
+            mousePosition: {enabled: false},
+            controls: {
+                help: {
+                    enabled: false
+                },
+                print: {
+                    enabled: false
+                },
+                toolbar: {
+                    active: null,
+                    expanded: false
+                },
+                drawer: {
+                    enabled: false,
+                    menu: "1"
+                }
+            }
+        },
         mobile: {}
     }
 };
