@@ -2,7 +2,7 @@
     "locale": "en-US",
     "messages": {
         "graticule": {
-            "tooltip": "Show / Hide The Grid coordinates",
+            "tooltip": "Show / Hide Coordinates Grid",
         },
         "helptexts": {
             "graticuleBtn": "This is the helptext for the graticuleBtn",
