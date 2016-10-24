@@ -55,9 +55,6 @@ var GraticuleBtn = React.createClass({
             </OverlayTrigger>
         );
     },
-    componentWillMount() {
-        this.props.onClick("visibilityoff");
-    },
     render() {
         var retval;
         var btn = this.renderButton();

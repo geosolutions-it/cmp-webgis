@@ -12,7 +12,7 @@
       {
        "type": "graticule",
        "name": "graticule",
-       "visibility": true
+       "visibility": false
      },
      {
       "type": "osm",
