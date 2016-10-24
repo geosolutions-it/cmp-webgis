@@ -8,7 +8,13 @@
       -20037508.34, -20037508.34,
       20037508.34, 20037508.34
     ],
-    "layers": [{
+    "layers": [
+      {
+       "type": "graticule",
+       "name": "graticule",
+       "visibility": false
+     },
+     {
       "type": "osm",
       "title": "Open Street Map",
       "name": "mapnik",

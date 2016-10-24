@@ -170,6 +170,20 @@
           "isDefault": false
         },
         "ScaleBox",
+				{
+					"name":"Graticule",
+					"cfg": {
+						"glyph": "eye-open",
+						"btnConfig": {
+							"className": "square-button"
+						}
+					},
+					"override": {
+						"Toolbar": {
+							"alwaysVisible": true
+						}
+					}
+				},
         {
     			  "name": "Locate",
     				"cfg": {

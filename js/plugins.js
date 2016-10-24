@@ -30,7 +30,8 @@ module.exports = {
         OmniBarPlugin: require('../MapStore2/web/client/plugins/OmniBar'),
         UndoPlugin: require('../MapStore2/web/client/plugins/History'),
         RedoPlugin: require('../MapStore2/web/client/plugins/History'),
-        BurgerMenuPlugin: require('../MapStore2/web/client/plugins/BurgerMenu')
+        BurgerMenuPlugin: require('../MapStore2/web/client/plugins/BurgerMenu'),
+        GraticulePlugin: require('./plugins/Graticule')
     },
     requires: {}
 };

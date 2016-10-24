@@ -1,0 +1,11 @@
+{
+    "locale": "en-FR",
+    "messages": {
+        "graticule": {
+            "tooltip": "Afficher / Masquer Les coordonnées de la grille",
+        },
+        "helptexts": {
+            "graticuleBtn": "Ceci est la helptext pour le graticuleBtn",
+        }
+    }
+}

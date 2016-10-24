@@ -1,0 +1,11 @@
+{
+    "locale": "en-IT",
+    "messages": {
+        "graticule": {
+            "tooltip": "Mostra / Nascondi la griglia delle coordinate",
+        },
+        "helptexts": {
+            "graticuleBtn": "Questo è il Helptext per la graticuleBt",
+        }
+    }
+}
