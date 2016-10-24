@@ -1,0 +1,11 @@
+{
+    "locale": "en-FR",
+    "messages": {
+        "graticule": {
+            "tooltip": "show réticule / hide",
+        },
+        "helptexts": {
+            "graticuleBtn": "Ceci est la helptext pour le graticuleBtn",
+        }
+    }
+}

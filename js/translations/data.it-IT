@@ -1,0 +1,11 @@
+{
+    "locale": "en-IT",
+    "messages": {
+        "graticule": {
+            "tooltip": "spettacolo reticolo / nascondi",
+        },
+        "helptexts": {
+            "graticuleBtn": "Questo è il Helptext per la graticuleBt",
+        }
+    }
+}
