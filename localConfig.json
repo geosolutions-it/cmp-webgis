@@ -19,6 +19,13 @@
             "zoomControl": false
     			}
     		},
+				"OmniBar",
+				{
+					"name": "Search",
+					"cfg": {
+						"withToggle": ["max-width: 768px", "min-width: 768px"]
+					}
+			},
         {
             "name": "DrawerMenu",
     				"cfg": {
@@ -246,5 +253,6 @@
 		        }
 		      }
 		    }]
+
 	}
 }
