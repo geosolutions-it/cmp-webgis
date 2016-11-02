@@ -43,11 +43,7 @@ function resetSearch() {
 }
 
 function textSearch(text) {
-    const options = [
-                      {name: "test"},
-                      {name: "test1"},
-                      {name: "test2"}
-                    ];
+    const options = {data: ['result1', 'result2']};
     return (dispatch) => {
         const result = Capi.searchtext(text, options);
         if (result) {
