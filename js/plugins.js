@@ -21,7 +21,6 @@ module.exports = {
         ShapeFilePlugin: require('../MapStore2/web/client/plugins/ShapeFile'),
         SettingsPlugin: require('../MapStore2/web/client/plugins/Settings'),
         ExpanderPlugin: require('../MapStore2/web/client/plugins/Expander'),
-        SearchPlugin: require('../MapStore2/web/client/plugins/Search'),
         ScaleBoxPlugin: require('../MapStore2/web/client/plugins/ScaleBox'),
         LocatePlugin: require('../MapStore2/web/client/plugins/Locate'),
         ZoomInPlugin: require('../MapStore2/web/client/plugins/ZoomIn'),
@@ -31,7 +30,8 @@ module.exports = {
         UndoPlugin: require('../MapStore2/web/client/plugins/History'),
         RedoPlugin: require('../MapStore2/web/client/plugins/History'),
         BurgerMenuPlugin: require('../MapStore2/web/client/plugins/BurgerMenu'),
-        GraticulePlugin: require('./plugins/Graticule')
+        GraticulePlugin: require('./plugins/Graticule'),
+        SearchPlugin: require('./plugins/Search')
     },
     requires: {}
 };
