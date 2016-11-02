@@ -18,4 +18,4 @@ Start the development application locally:
 
 The application runs at `http://localhost:8081` afterwards.
 
-Read more on the [wiki](https://github.com/geosolutions-it/cmp-webgis.git/wiki).
+Read more on the [wiki](https://github.com/geosolutions-it/cmp-webgis/wiki).
