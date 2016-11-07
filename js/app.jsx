@@ -27,7 +27,8 @@ const appConfig = {
     appStore,
     pluginsDef,
     initialActions: [],
-    appComponent: StandardRouter
+    appComponent: StandardRouter,
+    printingEnabled: true
 };
 
 ReactDOM.render(
