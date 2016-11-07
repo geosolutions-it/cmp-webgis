@@ -270,7 +270,7 @@ const Print = React.createClass({
 });
 
 const selector = createSelector([
-    (state) => (state.controls.print && state.controls.print.enabled ) || (state.controls.toolbar && state.controls.toolbar.active === 'print'),
+    (state) => state.controls.toolbar && state.controls.toolbar.active === 'print',
     (state) => state.print && state.print.capabilities,
     (state) => state.print && state.print.spec && assign({}, state.print.spec, state.print.map || {}),
     (state) => state.print && state.print.pdfUrl,

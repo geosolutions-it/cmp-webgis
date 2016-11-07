@@ -63,8 +63,8 @@ module.exports = {
         }, {
             path: new RegExp("/mapstore/proxy(.*)"),
             rewrite: rewriteUrl("/mapstore/proxy$1"),
-            host: "dev.mapstore2.geo-solutions.it",
-            target: "http://dev.mapstore2.geo-solutions.it"
+            host: "localhost",
+            target: "http://localhost:8080"
         }]
     },
 

@@ -36,7 +36,6 @@ const Message = require('../../MapStore2/web/client/components/I18N/Message');
 
 const PrintPreviewPanel = React.createClass({
     propTypes: {
-        map: React.PropTypes.object,
         layers: React.PropTypes.array,
         capabilities: React.PropTypes.object,
         printSpec: React.PropTypes.object,
@@ -66,9 +65,6 @@ const PrintPreviewPanel = React.createClass({
         closeGlyph: React.PropTypes.string,
         submitConfig: React.PropTypes.object,
         previewOptions: React.PropTypes.object
-    },
-    contextTypes: {
-        messages: React.PropTypes.object
     },
     getDefaultProps() {
         return {
@@ -153,7 +149,7 @@ const PrintPreviewPanel = React.createClass({
 });
 
 const selector = createSelector([
-    (state) => (state.controls.print && state.controls.print.enabled ) || (state.controls.toolbar && state.controls.toolbar.active === 'print'),
+    (state) => state.controls.print && state.controls.print.enabled,
     (state) => state.print && state.print.capabilities,
     (state) => state.print && state.print.spec && assign({}, state.print.spec, state.print.map || {}),
     (state) => state.print && state.print.pdfUrl,
