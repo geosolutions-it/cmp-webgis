@@ -11,12 +11,11 @@ const {connect} = require('react-redux');
 const LocaleUtils = require('../../MapStore2/web/client/utils/LocaleUtils');
 const CoordinatesUtils = require('../../MapStore2/web/client/utils/CoordinatesUtils');
 const MapUtils = require('../../MapStore2/web/client/utils/MapUtils');
-const Dialog = require('../components/print/Dialog');
-
+require('./print/print.css');
 const {Grid, Row, Col, Panel, Accordion, Glyphicon} = require('react-bootstrap');
 
-const {toggleControl, setControlProperty} = require('../../MapStore2/web/client/actions/controls');
-const {printSubmit, printSubmitting, configurePrintMap} = require('../actions/print');
+const {toggleControl} = require('../../MapStore2/web/client/actions/controls');
+const {printSubmit, printSubmitting, configurePrintMap} = require('../../MapStore2/web/client/actions/print');
 
 const {mapSelector} = require('../../MapStore2/web/client/selectors/map');
 const {layersSelector} = require('../../MapStore2/web/client/selectors/layers');
@@ -57,8 +56,6 @@ const Print = React.createClass({
         capabilities: React.PropTypes.object,
         printSpec: React.PropTypes.object,
         printSpecTemplate: React.PropTypes.object,
-        withContainer: React.PropTypes.bool,
-        withPanelAsContainer: React.PropTypes.bool,
         open: React.PropTypes.bool,
         pdfUrl: React.PropTypes.string,
         title: React.PropTypes.string,
@@ -68,7 +65,6 @@ const Print = React.createClass({
         alternatives: React.PropTypes.array,
         toggleControl: React.PropTypes.func,
         onBeforePrint: React.PropTypes.func,
-        setPage: React.PropTypes.func,
         onPrint: React.PropTypes.func,
         configurePrintMap: React.PropTypes.func,
         getPrintSpecification: React.PropTypes.func,
@@ -85,22 +81,16 @@ const Print = React.createClass({
         ignoreLayers: React.PropTypes.array,
         defaultBackground: React.PropTypes.string,
         closeGlyph: React.PropTypes.string,
-        submitConfig: React.PropTypes.object,
-        previewOptions: React.PropTypes.object,
-        cmpPrintPreviewTitle: React.PropTypes.string
+        submitConfig: React.PropTypes.object
     },
     contextTypes: {
         messages: React.PropTypes.object
     },
     getDefaultProps() {
         return {
-            cmpPrintPreviewTitle: "print",
-            withContainer: true,
-            withPanelAsContainer: true,
             title: 'print.paneltitle',
             toggleControl: () => {},
             onBeforePrint: () => {},
-            setPage: () => {},
             onPrint: () => {},
             configurePrintMap: () => {},
             printSpecTemplate: {},
@@ -220,35 +210,19 @@ const Print = React.createClass({
                 <Col xs={12} md={12} style={{textAlign: "center"}}>
                     <Resolution label={LocaleUtils.getMessageById(this.context.messages, "print.resolution")}/>
                     <PrintSubmit {...this.props.submitConfig} disabled={!layout} onPrint={this.print}/>
-                    {this.renderDownload()}
                 </Col>
             </Row>
         </Grid>
         );
-    },
-    renderDownload() {
-        if (this.props.pdfUrl && !this.props.usePreview) {
-            return <iframe src={this.props.pdfUrl} style={{visibility: "hidden", display: "none"}}/>;
-        }
-        return null;
     },
     renderBody() {
         return this.renderPrintPanel();
     },
     render() {
         if ((this.props.capabilities || this.props.error)) {
-            if (this.props.withContainer) {
-                if (this.props.withPanelAsContainer) {
-                    return (<Panel className="mapstore-print-panel" header={<span><span className="print-panel-title"><Message msgId="print.paneltitle"/></span><span className="print-panel-close panel-close" onClick={this.props.toggleControl}></span></span>} style={this.props.style}>
-                        {this.renderBody()}
-                    </Panel>);
-                }
-                return (<Dialog id="mapstore-print-panel" style={this.props.style}>
-                    <span role="header"><span className="print-panel-title"><Message msgId="print.paneltitle"/></span><button onClick={this.props.toggleControl} className="print-panel-close close">{this.props.closeGlyph ? <Glyphicon glyph={this.props.closeGlyph}/> : <span>×</span>}</button></span>
-                    {this.renderBody()}
-                </Dialog>);
-            }
-            return this.renderBody();
+            return (<div className="mapstore-print-panel-view">
+                {this.renderBody()}
+            </div>);
         }
         return null;
     },
@@ -292,7 +266,6 @@ const Print = React.createClass({
     },
     print() {
         const spec = this.props.getPrintSpecification(this.props.printSpec);
-        this.props.setPage(1);
         this.props.onBeforePrint();
         this.props.onPrint(this.props.capabilities.createURL, spec);
     }
@@ -324,7 +297,6 @@ const PrintPlugin = connect(selector, {
     toggleControl: toggleControl.bind(null, 'print', null),
     onPrint: printSubmit,
     onBeforePrint: printSubmitting,
-    setPage: setControlProperty.bind(null, 'print', 'currentPage'),
     configurePrintMap
 })(Print);
 
@@ -349,5 +321,5 @@ module.exports = {
             priority: 2
         }
     }),
-    reducers: {print: require('../reducers/print')}
+    reducers: {print: require('../../MapStore2/web/client/reducers/print')}
 };

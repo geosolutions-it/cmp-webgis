@@ -1,0 +1,50 @@
+.mapstore-print-panel-view .panel-body {
+    padding: 10px!important;
+    border: solid 1px #078AA3!important;
+}
+.mapstore-print-panel-view {
+    width: 100%;
+    margin-top: 10px!important;
+}
+.mapstore-print-panel-view .print-submit {
+    float: none!important;
+    text-align: center;
+}
+.mapstore-print-panel-view .panel-body .form-inline .form-group {
+    width: 100%;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.print-legend-options .col-xs-5 {
+    width: 100%;
+}
+.print-legend-options .col-xs-3 {
+    width: 100%;
+}
+.print-legend-options .col-xs-2 {
+    width: 20%;
+}
+div#mapstore-print-preview-panel {
+    width: 850px;
+    margin-top: 100px!important;
+    position: absolute;
+    top: 80px;
+    right: 200px;
+    z-index: 100;
+}
+#mapstore-print-preview-panel .glyphicon {
+    font-size: 28px;
+}
+#mapstore-print-preview-panel .print-download a {
+    color: white;
+}
+#mapstore-print-preview-panel .print-download {
+        margin-right: 10px;
+}
+
+.mapstore-print-panel {
+    width: auto;
+    position: absolute;
+    top: 50px;
+    right: 0px;
+}

@@ -12,9 +12,7 @@ const MapUtils = require('../../MapStore2/web/client/utils/MapUtils');
 const Dialog = require('../../MapStore2/web/client/components/misc/Dialog');
 const {Row, Col, Glyphicon} = require('react-bootstrap');
 
-const {toggleControl, setControlProperty} = require('../../MapStore2/web/client/actions/controls');
-const {printSubmit, printSubmitting, configurePrintMap} = require('../actions/print');
-
+const {toggleControl} = require('../../MapStore2/web/client/actions/controls');
 const {mapSelector} = require('../../MapStore2/web/client/selectors/map');
 const {layersSelector} = require('../../MapStore2/web/client/selectors/layers');
 
@@ -43,8 +41,6 @@ const PrintPreviewPanel = React.createClass({
         capabilities: React.PropTypes.object,
         printSpec: React.PropTypes.object,
         printSpecTemplate: React.PropTypes.object,
-        withContainer: React.PropTypes.bool,
-        withPanelAsContainer: React.PropTypes.bool,
         open: React.PropTypes.bool,
         pdfUrl: React.PropTypes.string,
         title: React.PropTypes.string,
@@ -53,10 +49,7 @@ const PrintPreviewPanel = React.createClass({
         mapType: React.PropTypes.string,
         alternatives: React.PropTypes.array,
         toggleControl: React.PropTypes.func,
-        onBeforePrint: React.PropTypes.func,
         setPage: React.PropTypes.func,
-        onPrint: React.PropTypes.func,
-        configurePrintMap: React.PropTypes.func,
         getPrintSpecification: React.PropTypes.func,
         getLayoutName: React.PropTypes.func,
         error: React.PropTypes.string,
@@ -73,13 +66,7 @@ const PrintPreviewPanel = React.createClass({
         closeGlyph: React.PropTypes.string,
         submitConfig: React.PropTypes.object,
         previewOptions: React.PropTypes.object,
-        cmpPrintPreviewTitle: React.PropTypes.string,
-        containerClassName: React.PropTypes.string,
-        headerClassName: React.PropTypes.string,
-        bodyClassName: React.PropTypes.string,
-        footerClassName: React.PropTypes.string,
-        className: React.PropTypes.string,
-        start: React.PropTypes.object
+        cmpPrintPreviewTitle: React.PropTypes.string
     },
     contextTypes: {
         messages: React.PropTypes.object
@@ -91,10 +78,7 @@ const PrintPreviewPanel = React.createClass({
             withPanelAsContainer: true,
             title: 'print.paneltitle',
             toggleControl: () => {},
-            onBeforePrint: () => {},
             setPage: () => {},
-            onPrint: () => {},
-            configurePrintMap: () => {},
             printSpecTemplate: {},
             getPrintSpecification: PrintUtils.getMapfishPrintSpecification,
             getLayoutName: PrintUtils.getLayoutName,
@@ -131,14 +115,7 @@ const PrintPreviewPanel = React.createClass({
                 },
                 glyph: "print"
             },
-            style: {},
-            start: {x: 0, y: 0},
-            className: "modal-dialog modal-content",
-            maskLoading: false,
-            containerClassName: "",
-            headerClassName: "modal-header",
-            bodyClassName: "modal-body",
-            footerClassName: "modal-footer"
+            style: {}
         };
     },
     renderPreviewPanel() {
@@ -202,14 +179,10 @@ const selector = createSelector([
 }));
 
 const PrintPreviewPanelPlugin = connect(selector, {
-    toggleControl: toggleControl.bind(null, 'print', null),
-    onPrint: printSubmit,
-    onBeforePrint: printSubmitting,
-    setPage: setControlProperty.bind(null, 'print', 'currentPage'),
-    configurePrintMap
+    toggleControl: toggleControl.bind(null, 'print', null)
 })(PrintPreviewPanel);
 
 module.exports = {
     PrintPreviewPanelPlugin: PrintPreviewPanelPlugin,
-    reducers: {print: require('../reducers/print')}
+    reducers: {print: require('../../MapStore2/web/client/reducers/print')}
 };
