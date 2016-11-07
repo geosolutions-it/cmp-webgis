@@ -80,7 +80,6 @@ const Print = React.createClass({
         scales: React.PropTypes.array,
         ignoreLayers: React.PropTypes.array,
         defaultBackground: React.PropTypes.string,
-        closeGlyph: React.PropTypes.string,
         submitConfig: React.PropTypes.object
     },
     contextTypes: {
@@ -122,7 +121,6 @@ const Print = React.createClass({
             scales: [],
             ignoreLayers: ["google", "bing"],
             defaultBackground: "osm",
-            closeGlyph: "",
             submitConfig: {
                 buttonConfig: {
                     bsSize: "large"

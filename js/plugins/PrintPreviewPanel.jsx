@@ -65,17 +65,13 @@ const PrintPreviewPanel = React.createClass({
         defaultBackground: React.PropTypes.string,
         closeGlyph: React.PropTypes.string,
         submitConfig: React.PropTypes.object,
-        previewOptions: React.PropTypes.object,
-        cmpPrintPreviewTitle: React.PropTypes.string
+        previewOptions: React.PropTypes.object
     },
     contextTypes: {
         messages: React.PropTypes.object
     },
     getDefaultProps() {
         return {
-            cmpPrintPreviewTitle: "print",
-            withContainer: true,
-            withPanelAsContainer: true,
             title: 'print.paneltitle',
             toggleControl: () => {},
             setPage: () => {},
