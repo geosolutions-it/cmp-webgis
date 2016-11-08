@@ -31,7 +31,9 @@ module.exports = {
         RedoPlugin: require('../MapStore2/web/client/plugins/History'),
         BurgerMenuPlugin: require('../MapStore2/web/client/plugins/BurgerMenu'),
         GraticulePlugin: require('./plugins/Graticule'),
-        SearchPlugin: require('./plugins/Search')
+        SearchPlugin: require('./plugins/Search'),
+        PrintPlugin: require('./plugins/Print'),
+        PrintPreviewPanelPlugin: require('./plugins/PrintPreviewPanel')
     },
     requires: {}
 };

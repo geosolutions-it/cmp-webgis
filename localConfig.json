@@ -138,6 +138,37 @@
     				}
     		},
 				{
+						"name": "Print",
+						"cfg": {
+							"useFixedScales": false,
+							"syncMapPreview": true,
+							"mapPreviewOptions": {
+								"enableScalebox": false,
+								"enableRefresh": false
+							},
+							"closeGlyph": "1-close",
+							"submitConfig": {
+								"buttonConfig": {
+									"bsSize": "small",
+									"bsStyle": "primary"
+								},
+								"glyph": ""
+							},
+							"previewOptions": {
+								"buttonStyle": "primary"
+							},
+							"withPanelAsContainer": false
+						}
+				},
+				{
+					"name": "PrintPreviewPanel",
+					"cfg": {
+						"previewOptions": {
+							"buttonStyle": "primary"
+						}
+					}
+				},
+				{
 						"name": "MeasureResults",
 		        "cfg":{
 		          "closeGlyph": "1-close",
