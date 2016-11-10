@@ -62,7 +62,22 @@
 						"alwaysVisible": true
 					}
 				}
-			}, {
+			},
+			{
+				"name":"Graticule",
+				"cfg": {
+					"glyph": "eye-open",
+					"btnConfig": {
+						"className": "square-button"
+					}
+				},
+				"override": {
+					"Toolbar": {
+						"alwaysVisible": true
+					}
+				}
+			},
+			{
 				"name": "TOC",
 				"cfg": {
 					"visibilityCheckType": "glyph",
