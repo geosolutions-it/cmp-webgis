@@ -12,6 +12,7 @@ const LocaleUtils = require('../../MapStore2/web/client/utils/LocaleUtils');
 const CoordinatesUtils = require('../../MapStore2/web/client/utils/CoordinatesUtils');
 const MapUtils = require('../../MapStore2/web/client/utils/MapUtils');
 require('./print/print.css');
+const ScaleBox = require("../../MapStore2/web/client/components/mapcontrols/scale/ScaleBox");
 const {Grid, Row, Col, Panel, Accordion, Glyphicon} = require('react-bootstrap');
 
 const {toggleControl} = require('../../MapStore2/web/client/actions/controls');
@@ -80,7 +81,9 @@ const Print = React.createClass({
         scales: React.PropTypes.array,
         ignoreLayers: React.PropTypes.array,
         defaultBackground: React.PropTypes.string,
-        submitConfig: React.PropTypes.object
+        submitConfig: React.PropTypes.object,
+        enableScalebox: React.PropTypes.bool,
+        onChangeZoomLevel: React.PropTypes.func
     },
     contextTypes: {
         messages: React.PropTypes.object
@@ -88,10 +91,12 @@ const Print = React.createClass({
     getDefaultProps() {
         return {
             title: 'print.paneltitle',
+            enableScalebox: true,
             toggleControl: () => {},
             onBeforePrint: () => {},
             onPrint: () => {},
             configurePrintMap: () => {},
+            onChangeZoomLevel: () => {},
             printSpecTemplate: {},
             getPrintSpecification: PrintUtils.getMapfishPrintSpecification,
             getLayoutName: PrintUtils.getLayoutName,
@@ -207,6 +212,11 @@ const Print = React.createClass({
                 </Col>
                 <Col xs={12} md={12} style={{textAlign: "center"}}>
                     <Resolution label={LocaleUtils.getMessageById(this.context.messages, "print.resolution")}/>
+                    {this.props.enableScalebox ? <div className="mappreview-scalebox-head"><label>Scale:</label><ScaleBox id="mappreview-scalebox"
+                            currentZoomLvl={this.props.map.scaleZoom}
+                            scales={this.props.scales}
+                            onChange={this.props.onChangeZoomLevel}
+                            /> </div> : null}
                     <PrintSubmit {...this.props.submitConfig} disabled={!layout} onPrint={this.print}/>
                 </Col>
             </Row>

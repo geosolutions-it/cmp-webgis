@@ -4,6 +4,9 @@
         "graticule": {
             "tooltip": "Show / Hide Coordinates Grid"
         },
+        "printwidget": {
+            "tooltip": "Show / Hide Print"
+        },
         "Language": "Language",
         "msgId0": "{name} took {numPhotos, plural, =0 {no photos} =1 {one photo} other {# photos}} on {takenDate, date, long}.",
         "htmlTest": "{name} {surname}",

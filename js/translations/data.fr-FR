@@ -4,6 +4,9 @@
         "graticule": {
             "tooltip": "Afficher / Masquer Les coordonnées de la grille"
         },
+        "printwidget": {
+            "tooltip": "Afficher / Masquer Imprimer"
+        },
         "Language": "Langue",
         "msgId0": "{name} a pris {numPhotos, plural, =0 {aucune photo} =1 {une photo} other {# photos}} le {takenDate, date, long}.",
         "htmlTest": "{name} {surname}",
