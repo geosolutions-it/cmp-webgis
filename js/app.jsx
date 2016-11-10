@@ -14,6 +14,14 @@ require('../MapStore2/web/client/product/assets/css/viewer.css');
 const StandardApp = require('../MapStore2/web/client/components/app/StandardApp');
 
 const {pages, pluginsDef, initialState, storeOpts} = require('./appConfig');
+const LocaleUtils = require('../MapStore2/web/client/utils/LocaleUtils');
+
+LocaleUtils.setSupportedLocales({
+    "en": {
+       code: "en-US",
+       description: "English"
+    }
+});
 
 const StandardRouter = connect((state) => ({
     locale: state.locale || {},
