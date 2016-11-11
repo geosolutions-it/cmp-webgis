@@ -33,7 +33,7 @@ module.exports = {
             position: 2,
             tool: true,
             tooltip: "graticule.tooltip",
-            icon: <Glyphicon glyph="eye-open"/>,
+            icon: <Glyphicon glyph="th"/>,
             help: <Message msgId="helptexts.graticuleBtn"/>,
             priority: 1
         }

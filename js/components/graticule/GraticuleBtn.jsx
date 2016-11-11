@@ -32,7 +32,7 @@ var GraticuleBtn = React.createClass({
             layer: "graticule",
             tooltipPlace: "left",
             bsStyle: "default",
-            glyph: "eye-open"
+            glyph: "th"
         };
     },
     onClick() {
