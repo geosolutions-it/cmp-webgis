@@ -66,7 +66,7 @@
 			{
 				"name":"Graticule",
 				"cfg": {
-					"glyph": "eye-open",
+					"glyph": "th",
 					"btnConfig": {
 						"className": "square-button"
 					}
@@ -378,7 +378,7 @@
 				{
 					"name":"Graticule",
 					"cfg": {
-						"glyph": "eye-open",
+						"glyph": "th",
 						"btnConfig": {
 							"className": "square-button"
 						}
