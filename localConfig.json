@@ -155,6 +155,21 @@
 				"cfg": {
 					"className": "square-button"
 				}
+			},
+			{
+				"name": "BurgerMenu",
+				"hide": true
+			},
+			{
+					"name": "Settings",
+					"cfg": {
+						"wrapWithPanel": false,
+						"closeGlyph": "1-close",
+	          "overrideSettings": {
+	            "history": false
+	          },
+						"wrap": true
+					}
 			}
 		],
 			"desktop": [
@@ -435,7 +450,44 @@
 		          "className": "square-button"
 		        }
 		      }
-		    }]
+		    },
+				{
+					"name": "BurgerMenu"
+				},
+			"MousePosition",
+			{
+					"name": "Snapshot",
+					"cfg": {
+						"wrap": true,
+						"wrapWithPanel": false,
+						"closeGlyph": "1-close",
+						"buttonStyle": "primary"
+					}
+			},
+			{
+					"name": "ShapeFile",
+					"cfg": {
+						"wrap": true,
+						"wrapWithPanel": false,
+						"closeGlyph": "1-close",
+						"buttonSize": "small"
+					}
+			},
+			{
+					"name": "MetadataExplorer",
+					"cfg": {
+						"showGetCapLinks": false,
+						"addAuthentication": false,
+						"wrap": true,
+						"searchOnStarup": false,
+						"wrapWithPanel": false,
+						"closeGlyph": "1-close",
+						"initialCatalogURL": {
+							"csw": "http://demo.geo-solutions.it/geoserver/csw",
+							"wms": "http://demo.geo-solutions.it/geoserver/wms"
+						}
+					}
+			}]
 
 	}
 }
