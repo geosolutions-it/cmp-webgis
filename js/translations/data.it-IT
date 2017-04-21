@@ -4,6 +4,9 @@
     "graticule": {
         "tooltip": "Mostra / Nascondi la griglia delle coordinate"
     },
+    "printwidget": {
+        "tooltip": "Mostra / Nascondi Stampa"
+    },
     "Language": "Lingua",
     "msgId0": "{name} ha scattato {numPhotos, plural, =0 {nessuna foto} other {# foto}} il {takenDate, date, long}.",
     "htmlTest": "{name} {surname}",

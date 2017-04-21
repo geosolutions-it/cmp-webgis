@@ -1,9 +1,9 @@
 {
-	"proxyUrl": "/cmp-webgis/proxy/?url=",
-	"geoStoreUrl": "/cmp-webgis/rest/geostore",
+	"proxyUrl": "/mapstore/proxy/?url=",
+	"geoStoreUrl": "/mapstore/rest/geostore",
 	"printUrl": "http://demo.geo-solutions.it/geoserver/pdf/info.json",
 	"bingApiKey": "AhuXBu7ipR1gNbBfXhtUAyCZ6rkC5PkWpxs2MnMRZ1ZupxQfivjLCch22ozKSCAn",
-	"translationsPath": "./MapStore2/web/client/translations",
+	"translationsPath": "./js/translations",
 	"plugins": {
 		"mobile": [{
 				"name": "Map",
@@ -176,6 +176,7 @@
         {
     			"name": "Map",
     			"cfg": {
+						"tools": ["measurement", "locate", "overview", "scalebar", "draw"],
     				"toolsOptions": {
     					"scalebar": {
     						"leaflet": {
@@ -379,6 +380,20 @@
 					"name":"Graticule",
 					"cfg": {
 						"glyph": "th",
+						"btnConfig": {
+							"className": "square-button"
+						}
+					},
+					"override": {
+						"Toolbar": {
+							"alwaysVisible": true
+						}
+					}
+				},
+				{
+					"name":"PrintWidget",
+					"cfg": {
+						"glyph": "print",
 						"btnConfig": {
 							"className": "square-button"
 						}

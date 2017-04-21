@@ -35,7 +35,8 @@ module.exports = {
         GraticulePlugin: require('./plugins/Graticule'),
         SearchPlugin: require('./plugins/Search'),
         PrintPlugin: require('./plugins/Print'),
-        PrintPreviewPanelPlugin: require('./plugins/PrintPreviewPanel')
+        PrintPreviewPanelPlugin: require('./plugins/PrintPreviewPanel'),
+        PrintWidgetPlugin: require('./plugins/PrintWidget')
     },
     requires: {}
 };

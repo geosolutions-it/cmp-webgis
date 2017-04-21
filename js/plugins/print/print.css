@@ -48,3 +48,8 @@ div#mapstore-print-preview-panel {
     top: 50px;
     right: 0px;
 }
+.mapstore-print-panel-view #mappreview-scalebox {
+    width: auto;
+    top: 0;
+    left: 0;
+}
